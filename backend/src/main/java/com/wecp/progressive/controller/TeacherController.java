@@ -29,11 +29,7 @@ public class TeacherController  {
         return null;
     }
   
-   public String putMethodName(@PathVariable String id, @RequestBody String entity) {
-       //TODO: process PUT request
-       
-       return entity;
-   }
+
    @PutMapping("/{teacherId}")
     public ResponseEntity<Void> updateTeacher(int teacherId, Teacher teacher) throws Exception{
         return new ResponseEntity<>(HttpStatus.OK);
