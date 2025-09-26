@@ -2,6 +2,10 @@ package com.wecp.progressive.repository;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 93d75797aeab4efd29684a9a28db9832f4c9db3b
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -10,8 +14,20 @@ import com.wecp.progressive.entity.Course;
 import java.util.List;
 @Repository
 public interface CourseRepository extends JpaRepository<Course,Integer> {
+<<<<<<< HEAD
     // @Query("select c from course c where course_id=:id")
     // public Course findByCourseId(@Param("id") int courseId);
 
     
+=======
+    @Query("select c from course c where course_id=:id")
+    public Course findByCourseId(@Param("id") int courseId);
+
+    
+=======
+
+import com.wecp.progressive.entity.Course;
+public interface CourseRepository extends JpaRepository<Course,Integer> {
+>>>>>>> ba25ff8100aa2a5913fb692d3e9597ccc1926409
+>>>>>>> 93d75797aeab4efd29684a9a28db9832f4c9db3b
 }

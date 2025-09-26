@@ -33,7 +33,15 @@ private static void loadProperties()
 }
 public static Connection getConnection() throws SQLException
 {
+<<<<<<< HEAD
     String url=properties.getProperty("spring.datasource.url");
+=======
+<<<<<<< HEAD
+    String url=properties.getProperty("spring.datasource.url");
+=======
+    String url=properties.getProperty("spring datasource.url");
+>>>>>>> ba25ff8100aa2a5913fb692d3e9597ccc1926409
+>>>>>>> 93d75797aeab4efd29684a9a28db9832f4c9db3b
     String user=properties.getProperty("spring.datasource.username");
     String password=properties.getProperty("spring.datasource.password");
     return DriverManager.getConnection(url,user,password);
