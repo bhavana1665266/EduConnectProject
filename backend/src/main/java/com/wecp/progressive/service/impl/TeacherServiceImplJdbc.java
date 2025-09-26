@@ -1,14 +1,7 @@
 package com.wecp.progressive.service.impl;
 
 import java.util.ArrayList;
-<<<<<<< HEAD
 import java.sql.SQLException;
-=======
-<<<<<<< HEAD
-import java.sql.SQLException;
-=======
->>>>>>> ba25ff8100aa2a5913fb692d3e9597ccc1926409
->>>>>>> 93d75797aeab4efd29684a9a28db9832f4c9db3b
 import java.util.*;
 
 import com.wecp.progressive.dao.TeacherDAO;
@@ -16,10 +9,6 @@ import com.wecp.progressive.entity.Teacher;
 import com.wecp.progressive.service.TeacherService;
 
 public class TeacherServiceImplJdbc implements TeacherService  {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 93d75797aeab4efd29684a9a28db9832f4c9db3b
     private TeacherDAO teacherDAO;
           
         public TeacherServiceImplJdbc(TeacherDAO teacherDAO) {
@@ -50,42 +39,6 @@ public void deleteTeacher(int teacherId) throws SQLException{
 public Teacher getTeacherById(int teacherId) throws SQLException
 {
     return teacherDAO.getTeacherById(teacherId);
-<<<<<<< HEAD
-=======
-=======
-    private TeacherDAO teacheDAO;
-          
-        public TeacherServiceImplJdbc(TeacherDAO teacheDAO) {
-        this.teacheDAO = teacheDAO;
-    }
-        public List<Teacher> getAllTeachers()
-    {
-   List<Teacher>list=new ArrayList<>();
-return list;
-    }
-    public Integer addTeacher(Teacher teacher)
-    {
-        return-1;
-    }
-public List<Teacher> getTeacherSortedByExperience()
-{
-    List<Teacher>list=new ArrayList<>();
-return list;
-}
-public void updateTeacher(Teacher teacher)
-{
-
-}
-
-public void deleteTeacher(Teacher teacher)
-{
-    
-}
-public Teacher getTeacherById(int teacherId)
-{
-    return null;
->>>>>>> ba25ff8100aa2a5913fb692d3e9597ccc1926409
->>>>>>> 93d75797aeab4efd29684a9a28db9832f4c9db3b
 }
 
 

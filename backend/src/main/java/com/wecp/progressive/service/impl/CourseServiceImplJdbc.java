@@ -4,14 +4,7 @@ import com.wecp.progressive.dao.CourseDAO;
 import com.wecp.progressive.entity.Course;
 import com.wecp.progressive.service.CourseService;
 
-<<<<<<< HEAD
 import java.sql.SQLException;
-=======
-<<<<<<< HEAD
-import java.sql.SQLException;
-=======
->>>>>>> ba25ff8100aa2a5913fb692d3e9597ccc1926409
->>>>>>> 93d75797aeab4efd29684a9a28db9832f4c9db3b
 import java.util.*;
 public class CourseServiceImplJdbc implements CourseService{
 
@@ -20,10 +13,6 @@ public CourseServiceImplJdbc(CourseDAO courseDAO) {
     }
 private CourseDAO courseDAO;
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 93d75797aeab4efd29684a9a28db9832f4c9db3b
 public List<Course> getAllCourseById(int courseId) throws SQLException
 {
     return courseDAO.getAllCourses();
@@ -47,35 +36,5 @@ public List<Course> getAllCourses() throws SQLException{
 
 public void deleteCourse(int courseId) throws SQLException {
    courseDAO.deleteCourse(courseId);
-<<<<<<< HEAD
-=======
-=======
-public List<Course> getAllCourseById(int courseId)
-{
-    List<Course> list=new ArrayList<>();
-       return list;
-}
-public Course getCourseById(int courseId)
-{
-    return null;
-}
-public Integer addCourse(Course course)
-{
-    return -1;
-}
-public void updateCourse(Course course) {
-   
-}
-
-public List<Course> getAllCourses() {
-   
-    List<Course> list=new ArrayList<>();
-       return list;
-}
-
-public void deleteCourse(int courseId) {
-    
->>>>>>> ba25ff8100aa2a5913fb692d3e9597ccc1926409
->>>>>>> 93d75797aeab4efd29684a9a28db9832f4c9db3b
 }
 }

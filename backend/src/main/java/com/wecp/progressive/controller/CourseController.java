@@ -1,10 +1,6 @@
 package com.wecp.progressive.controller;
 
 import com.wecp.progressive.entity.Course;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 93d75797aeab4efd29684a9a28db9832f4c9db3b
 import com.wecp.progressive.service.CourseService;
 import com.wecp.progressive.service.impl.CourseServiceImplJpa;
 
@@ -56,37 +52,5 @@ public class CourseController {
     @GetMapping("/teacher/{teacherId}")
     public ResponseEntity<List<Course>> getAllCourseByTeacherId(@PathVariable int teacherId) throws Exception{
         return new ResponseEntity<>(courseServiceImplJpa.getAllCourseByTeacherId(teacherId),HttpStatus.OK);
-<<<<<<< HEAD
-=======
-=======
-import org.springframework.http.ResponseEntity;
-
-import java.util.List;
-
-public class CourseController {
-    public ResponseEntity<List<Course>> getAllCourses() {
-        return null;
-    }
-
-    public ResponseEntity<Course> getCourseById(int courseId) {
-        return null;
-    }
-
-    public ResponseEntity<Integer> addCourse(Course course) {
-        return null;
-    }
-
-    public ResponseEntity<Void> updateCourse(int courseId, Course course) {
-        return null;
-    }
-
-    public ResponseEntity<Void> deleteCourse(int courseId) {
-        return null;
-    }
-
-    public ResponseEntity<List<Course>> getAllCourseByTeacherId(int teacherId) {
-        return null;
->>>>>>> ba25ff8100aa2a5913fb692d3e9597ccc1926409
->>>>>>> 93d75797aeab4efd29684a9a28db9832f4c9db3b
     }
 }

@@ -51,18 +51,7 @@ public class StudentDAOImpl implements StudentDAO {
             }
             
         } 
-<<<<<<< HEAD
         
-=======
-<<<<<<< HEAD
-        
-=======
-        catch(SQLException e)
-        {
-            throw new SQLException(e.getMessage());
-        }
->>>>>>> ba25ff8100aa2a5913fb692d3e9597ccc1926409
->>>>>>> 93d75797aeab4efd29684a9a28db9832f4c9db3b
         return -1;
     }
 
@@ -74,33 +63,14 @@ public class StudentDAOImpl implements StudentDAO {
             ps.setInt(1, studentId);
             ps.executeUpdate();
         }   
-<<<<<<< HEAD
         
-=======
-<<<<<<< HEAD
-        
-=======
-        catch(SQLException e)
-        {
-            throw new SQLException(e.getMessage());
-        }
->>>>>>> ba25ff8100aa2a5913fb692d3e9597ccc1926409
->>>>>>> 93d75797aeab4efd29684a9a28db9832f4c9db3b
     }
 
     @Override
     public List<Student> getAllStudents() throws SQLException {
         List<Student> li= new ArrayList<>();
         String query="select * from student";
-<<<<<<< HEAD
         try(PreparedStatement ps=connection.prepareStatement(query))
-=======
-<<<<<<< HEAD
-        try(PreparedStatement ps=connection.prepareStatement(query))
-=======
-        try(PreparedStatement ps=connection.prepareStatement(query);)
->>>>>>> ba25ff8100aa2a5913fb692d3e9597ccc1926409
->>>>>>> 93d75797aeab4efd29684a9a28db9832f4c9db3b
         {
             try(ResultSet rs=ps.executeQuery();)
             {
@@ -110,18 +80,7 @@ public class StudentDAOImpl implements StudentDAO {
                 }
             }
         }
-<<<<<<< HEAD
         
-=======
-<<<<<<< HEAD
-        
-=======
-        catch(SQLException e)
-        {
-            throw new SQLException(e.getMessage());
-        }
->>>>>>> ba25ff8100aa2a5913fb692d3e9597ccc1926409
->>>>>>> 93d75797aeab4efd29684a9a28db9832f4c9db3b
         return li;
     }
 
@@ -129,15 +88,7 @@ public class StudentDAOImpl implements StudentDAO {
     public Student getStudentById(int studentId) throws SQLException {
         
         String query="select * from student where student_id=?";
-<<<<<<< HEAD
         try(PreparedStatement ps=connection.prepareStatement(query))
-=======
-<<<<<<< HEAD
-        try(PreparedStatement ps=connection.prepareStatement(query))
-=======
-        try(PreparedStatement ps=connection.prepareStatement(query);)
->>>>>>> ba25ff8100aa2a5913fb692d3e9597ccc1926409
->>>>>>> 93d75797aeab4efd29684a9a28db9832f4c9db3b
         {
             ps.setInt(1, studentId);
             try(ResultSet rs=ps.executeQuery();)
@@ -148,33 +99,14 @@ public class StudentDAOImpl implements StudentDAO {
                 }
             }
         }
-<<<<<<< HEAD
         
-=======
-<<<<<<< HEAD
-        
-=======
-        catch(SQLException e)
-        {
-            throw new SQLException(e.getMessage());
-        }
->>>>>>> ba25ff8100aa2a5913fb692d3e9597ccc1926409
->>>>>>> 93d75797aeab4efd29684a9a28db9832f4c9db3b
         return null;
     }
 
     @Override
     public void updateStudent(Student student) throws SQLException {
         String query="update student set full_name=?, date_of_birth=?, contact_number=?, email=?, address=? where student_id=?";
-<<<<<<< HEAD
         try(PreparedStatement ps=connection.prepareStatement(query))
-=======
-<<<<<<< HEAD
-        try(PreparedStatement ps=connection.prepareStatement(query))
-=======
-        try(PreparedStatement ps=connection.prepareStatement(query);)
->>>>>>> ba25ff8100aa2a5913fb692d3e9597ccc1926409
->>>>>>> 93d75797aeab4efd29684a9a28db9832f4c9db3b
         {
             ps.setString(1, student.getFullName());
             ps.setDate(2, new java.sql.Date(student.getDateOfBirth().getTime()));
@@ -185,18 +117,7 @@ public class StudentDAOImpl implements StudentDAO {
 
             ps.executeUpdate();
         }
-<<<<<<< HEAD
        
-=======
-<<<<<<< HEAD
-       
-=======
-        catch(SQLException e)
-        {
-            throw new SQLException(e.getMessage());
-        }
->>>>>>> ba25ff8100aa2a5913fb692d3e9597ccc1926409
->>>>>>> 93d75797aeab4efd29684a9a28db9832f4c9db3b
         
     }
     
