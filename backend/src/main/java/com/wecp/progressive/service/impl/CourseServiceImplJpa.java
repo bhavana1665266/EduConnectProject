@@ -24,7 +24,13 @@ return courseRepository.findAll();
 }
 public Course getCourseById(int courseId) throws Exception
 {
- return courseRepository.findById(courseId).get();
+ Optional<Course> c=courseRepository.findById(courseId);
+ if(c.isPresent()){
+    return c.get();
+ }
+ else{
+    return null;
+ }
 }
 public Integer addCourse(Course course)
 {
@@ -43,7 +49,9 @@ public void updateCourse(Course course) throws Exception{
 }
    public void deleteCourse(int courseId) throws Exception
    {
+    if(courseRepository.findById(courseId).isPresent()){
      courseRepository.deleteById(courseId);
+    }
    }
 
    public List<Course> getAllCourseByTeacherId(int teacherId)

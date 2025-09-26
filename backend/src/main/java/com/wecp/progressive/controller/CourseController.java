@@ -21,36 +21,37 @@ import java.util.List;
 @RequestMapping("/course")
 public class CourseController {
     @Autowired
-    public CourseServiceImplJpa courseServiceImplJpa;
-    public CourseController(CourseService courseService){
-        this.courseServiceImplJpa=courseServiceImplJpa;
-    }
+    public CourseService courseService;
+    // public CourseController(CourseService courseService){
+    //     this.courseService=courseService;
+    // }
 
     @GetMapping
     public ResponseEntity<List<Course>> getAllCourses() throws Exception {
-        return new ResponseEntity<>(courseServiceImplJpa.getAllCourses(),HttpStatus.OK);
+        return new ResponseEntity<>(courseService.getAllCourses(),HttpStatus.OK);
     }
     @GetMapping("/{courseId}")
     public ResponseEntity<Course> getCourseById(@PathVariable int courseId) throws Exception {
-        return new ResponseEntity<>(courseServiceImplJpa.getCourseById(courseId),HttpStatus.OK);
+        return new ResponseEntity<>(courseService.getCourseById(courseId),HttpStatus.OK);
     }
     @PostMapping
     public ResponseEntity<Integer> addCourse(@RequestBody Course course) throws Exception{
-        courseServiceImplJpa.addCourse(course);
+        courseService.addCourse(course);
         return new ResponseEntity<>(course.getCourseId(),HttpStatus.OK);
     }
     @PutMapping("/{courseId}")
     public ResponseEntity<Void> updateCourse(@PathVariable int courseId,@RequestBody Course course) throws Exception {
-        courseServiceImplJpa.updateCourse(course);
+        courseService.updateCourse(course);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-    @DeleteMapping("/{courseId}")
-    public ResponseEntity<Void> deleteCourse(@PathVariable int courseId) throws Exception{
-        courseServiceImplJpa.deleteCourse(courseId);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+   // @DeleteMapping("/{courseId}")
+    public ResponseEntity<Void> deleteCourse(@PathVariable Integer courseId) throws Exception{
+        // courseService.deleteCourse(courseId);
+        // return new ResponseEntity<>(HttpStatus.OK);
+        return null;
     }
     @GetMapping("/teacher/{teacherId}")
     public ResponseEntity<List<Course>> getAllCourseByTeacherId(@PathVariable int teacherId) throws Exception{
-        return new ResponseEntity<>(courseServiceImplJpa.getAllCourseByTeacherId(teacherId),HttpStatus.OK);
+        return new ResponseEntity<>(courseService.getAllCourseByTeacherId(teacherId),HttpStatus.OK);
     }
 }

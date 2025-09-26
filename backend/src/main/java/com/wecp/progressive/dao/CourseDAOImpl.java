@@ -35,7 +35,7 @@ public class CourseDAOImpl implements CourseDAO {
         {
             ps.setString(1, course.getCourseName());
             ps.setString(2,course.getDescription());
-            ps.setInt(3,course.getTeacherId());
+            //ps.setInt(3,course.getTeacherId());
             
             int affectedRows = ps.executeUpdate();
 
@@ -67,10 +67,10 @@ public class CourseDAOImpl implements CourseDAO {
             ps.setInt(1, courseId);   
             ps.executeUpdate();
         }
-        // catch(SQLException e)
-        // {
-        //     throw new SQLException(e.getMessage());
-        // }
+        catch(SQLException e)
+        {
+            throw new SQLException(e.getMessage());
+        }
         
     }
 
@@ -127,7 +127,7 @@ public class CourseDAOImpl implements CourseDAO {
         {
             ps.setString(1, course.getCourseName());
             ps.setString(2, course.getDescription());
-            ps.setInt(3, course.getTeacherId());
+           // ps.setInt(3, course.getTeacherId());
             ps.setInt(4, course.getCourseId());
             ps.executeUpdate();
 
