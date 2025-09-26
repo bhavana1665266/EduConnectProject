@@ -1,32 +1,56 @@
 package com.wecp.progressive.controller;
 
 import com.wecp.progressive.entity.Course;
+import com.wecp.progressive.service.CourseService;
+import com.wecp.progressive.service.impl.CourseServiceImplJpa;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-
+@RestController
+@RequestMapping("/course")
 public class CourseController {
-    public ResponseEntity<List<Course>> getAllCourses() {
-        return null;
+    @Autowired
+    public CourseServiceImplJpa courseServiceImplJpa;
+    public CourseController(CourseService courseService){
+        this.courseServiceImplJpa=courseServiceImplJpa;
     }
 
-    public ResponseEntity<Course> getCourseById(int courseId) {
-        return null;
+    @GetMapping
+    public ResponseEntity<List<Course>> getAllCourses() throws Exception {
+        return new ResponseEntity<>(courseServiceImplJpa.getAllCourses(),HttpStatus.OK);
     }
-
-    public ResponseEntity<Integer> addCourse(Course course) {
-        return null;
+    @GetMapping("/{courseId}")
+    public ResponseEntity<Course> getCourseById(@PathVariable int courseId) throws Exception {
+        return new ResponseEntity<>(courseServiceImplJpa.getCourseById(courseId),HttpStatus.OK);
     }
-
-    public ResponseEntity<Void> updateCourse(int courseId, Course course) {
-        return null;
+    @PostMapping
+    public ResponseEntity<Integer> addCourse(@RequestBody Course course) throws Exception{
+        courseServiceImplJpa.addCourse(course);
+        return new ResponseEntity<>(course.getCourseId(),HttpStatus.OK);
     }
-
-    public ResponseEntity<Void> deleteCourse(int courseId) {
-        return null;
+    @PutMapping("/{courseId}")
+    public ResponseEntity<Void> updateCourse(@PathVariable int courseId,@RequestBody Course course) throws Exception {
+        courseServiceImplJpa.updateCourse(course);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
-
-    public ResponseEntity<List<Course>> getAllCourseByTeacherId(int teacherId) {
-        return null;
+    @DeleteMapping("/{courseId}")
+    public ResponseEntity<Void> deleteCourse(@PathVariable int courseId) throws Exception{
+        courseServiceImplJpa.deleteCourse(courseId);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+    @GetMapping("/teacher/{teacherId}")
+    public ResponseEntity<List<Course>> getAllCourseByTeacherId(@PathVariable int teacherId) throws Exception{
+        return new ResponseEntity<>(courseServiceImplJpa.getAllCourseByTeacherId(teacherId),HttpStatus.OK);
     }
 }
