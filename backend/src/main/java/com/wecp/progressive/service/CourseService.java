@@ -6,7 +6,11 @@ import java.util.List;
 
 public interface CourseService {
 
+<<<<<<< HEAD
     public List<Course> getAllCourses() throws Exception;
+=======
+    public List<Course> getAllCourses();
+>>>>>>> ba25ff8100aa2a5913fb692d3e9597ccc1926409
 
     public Course getCourseById(int courseId) throws Exception;
 

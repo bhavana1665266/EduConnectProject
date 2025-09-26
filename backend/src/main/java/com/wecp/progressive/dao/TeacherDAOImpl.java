@@ -52,12 +52,20 @@ public class TeacherDAOImpl implements TeacherDAO {
                 }
             }
         }
+<<<<<<< HEAD
         
+=======
+        catch(SQLException e)
+        {
+            System.out.println(e.getMessage());
+        }
+>>>>>>> ba25ff8100aa2a5913fb692d3e9597ccc1926409
         return -1;
     }
 
     @Override
     public void deleteTeacher(int teacherId) throws SQLException {
+<<<<<<< HEAD
         
         String query="delete from teacher where teacher_id=?";
         try(PreparedStatement ps=connection.prepareStatement(query))
@@ -67,12 +75,29 @@ public class TeacherDAOImpl implements TeacherDAO {
            
         }
        
+=======
+        // TODO Auto-generated method stub
+        String query="delete from teacher where teacher_id=?";
+        try(PreparedStatement ps=connection.prepareStatement(query);)
+        {
+            ps.setInt(1, teacherId);
+            ps.executeUpdate();
+        }
+        catch(SQLException e)
+        {
+            System.out.println(e.getMessage());
+        }
+>>>>>>> ba25ff8100aa2a5913fb692d3e9597ccc1926409
         
     }
 
     @Override
     public List<Teacher> getAllTeachers() throws SQLException {
+<<<<<<< HEAD
         
+=======
+        // TODO Auto-generated method stub
+>>>>>>> ba25ff8100aa2a5913fb692d3e9597ccc1926409
         List<Teacher> li= new ArrayList<>();
         String query="select * from teacher";
         try(Statement ps=connection.createStatement();)
@@ -85,7 +110,14 @@ public class TeacherDAOImpl implements TeacherDAO {
                 }
             }
         }
+<<<<<<< HEAD
         
+=======
+        catch(SQLException e)
+        {
+            System.out.println(e.getMessage());
+        }
+>>>>>>> ba25ff8100aa2a5913fb692d3e9597ccc1926409
         return li;
     }
 
@@ -105,7 +137,14 @@ public class TeacherDAOImpl implements TeacherDAO {
                 }
             }
         }
+<<<<<<< HEAD
         
+=======
+        catch(SQLException e)
+        {
+            System.out.println(e.getMessage());
+        }
+>>>>>>> ba25ff8100aa2a5913fb692d3e9597ccc1926409
         return null;
     }
 
@@ -123,7 +162,14 @@ public class TeacherDAOImpl implements TeacherDAO {
             ps.setInt(6, teacher.getTeacherId());
             ps.executeUpdate();
         }
+<<<<<<< HEAD
        
+=======
+        catch(SQLException e)
+        {
+            System.out.println(e.getMessage());
+        }
+>>>>>>> ba25ff8100aa2a5913fb692d3e9597ccc1926409
         
     }
     

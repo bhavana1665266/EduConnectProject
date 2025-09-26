@@ -1,5 +1,8 @@
 package com.wecp.progressive.service.impl;
+<<<<<<< HEAD
 import java.sql.SQLException;
+=======
+>>>>>>> ba25ff8100aa2a5913fb692d3e9597ccc1926409
 import java.util.*;
 
 import com.wecp.progressive.dao.StudentDAO;
@@ -11,6 +14,7 @@ public class StudentServiceImplJdbc  implements StudentService{
     public StudentServiceImplJdbc(StudentDAO studentDAO) {
         this.studentDAO = studentDAO;
     }
+<<<<<<< HEAD
     public List<Student> getAllStudents() throws SQLException
     {
         return studentDAO.getAllStudents();
@@ -36,5 +40,29 @@ public class StudentServiceImplJdbc  implements StudentService{
    public Student getStudentById(int studentId) throws SQLException
    {
     return studentDAO.getStudentById(studentId);
+=======
+    public List<Student> getAllStudents()
+    {
+        List<Student> list=new ArrayList<>();
+        return list;
+    }
+    public Integer addStudent(Student student)
+    {
+        return -1;
+    }
+    public List<Student> getAllStudentSortedByName()
+    {
+        List<Student> list=new ArrayList<>();
+        return list;
+    }
+   public void deleteStudent(int studentId)
+   {
+    
+   }
+
+   public Student getStudentById(int studentId)
+   {
+    return null;
+>>>>>>> ba25ff8100aa2a5913fb692d3e9597ccc1926409
    }
 }
