@@ -1,6 +1,7 @@
 package com.wecp.progressive.controller;
 
 import com.wecp.progressive.entity.Enrollment;
+<<<<<<< HEAD
 import com.wecp.progressive.service.EnrollmentService;
 
 
@@ -20,13 +21,26 @@ public class EnrollmentController {
     @Autowired
     EnrollmentService enrollmentService;
     
+=======
+import org.springframework.http.ResponseEntity;
+
+import java.util.List;
+
+public class EnrollmentController {
+>>>>>>> f55bf55e462e4faaa809ff6a4f28c9749421a7f1
 
     public ResponseEntity<List<Enrollment>> getAllEnrollments() {
         return null;
     }
+<<<<<<< HEAD
     @PostMapping
     public ResponseEntity<Integer> createEnrollment(@RequestBody Enrollment enrollment) {
         return new ResponseEntity<>(enrollmentService.createEnrollment(enrollment),HttpStatus.CREATED);
+=======
+
+    public ResponseEntity<Integer> createEnrollment(Enrollment enrollment) {
+        return null;
+>>>>>>> f55bf55e462e4faaa809ff6a4f28c9749421a7f1
     }
 
     public ResponseEntity<Void> updateEnrollment(int enrollmentId, Enrollment enrollment) {

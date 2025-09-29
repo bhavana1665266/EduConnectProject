@@ -1,5 +1,6 @@
 package com.wecp.progressive.service.impl;
 
+<<<<<<< HEAD
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,5 +49,8 @@ public class EnrollmentServiceImpl implements EnrollmentService {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getAllEnrollmentsByCourse'");
     }
+=======
+public class EnrollmentServiceImpl  {
+>>>>>>> f55bf55e462e4faaa809ff6a4f28c9749421a7f1
 
 }

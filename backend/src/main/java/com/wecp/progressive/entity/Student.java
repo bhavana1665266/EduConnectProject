@@ -1,7 +1,10 @@
 package com.wecp.progressive.entity;
 import java.util.*;
 
+<<<<<<< HEAD
 import javax.persistence.Column;
+=======
+>>>>>>> f55bf55e462e4faaa809ff6a4f28c9749421a7f1
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,7 +14,10 @@ import javax.persistence.Id;
 public class Student implements Comparable<Student>{
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
+<<<<<<< HEAD
 @Column(name = "student_Id")
+=======
+>>>>>>> f55bf55e462e4faaa809ff6a4f28c9749421a7f1
   private int studentId;
   private String fullName;
   private Date dateOfBirth;

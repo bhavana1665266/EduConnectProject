@@ -1,5 +1,6 @@
 package com.wecp.progressive.repository;
 
+<<<<<<< HEAD
 import java.util.List;
 import java.util.Optional;
 
@@ -16,4 +17,8 @@ public interface EnrollmentRepository extends JpaRepository<Enrollment,Integer>{
     // void deleteByCourseId(int courseId);
     // void deleteByStudentId(int courseId);
     // void deleteByTeacherId(int teacherId);
+=======
+
+public interface EnrollmentRepository {
+>>>>>>> f55bf55e462e4faaa809ff6a4f28c9749421a7f1
 }

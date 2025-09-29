@@ -1,5 +1,6 @@
 package com.wecp.progressive.entity;
 
+<<<<<<< HEAD
 import java.lang.annotation.Inherited;
 import java.util.Date;
 
@@ -55,5 +56,8 @@ public class Enrollment {
     }
     
     
+=======
+public class Enrollment {
+>>>>>>> f55bf55e462e4faaa809ff6a4f28c9749421a7f1
 
 }
