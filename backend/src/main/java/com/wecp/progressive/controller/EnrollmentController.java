@@ -14,12 +14,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+
+import org.springframework.http.ResponseEntity;
+
+import java.util.List;
 @RestController
 @RequestMapping("/enrollment")
 public class EnrollmentController {
     @Autowired
     EnrollmentService enrollmentService;
-    
+
 
     public ResponseEntity<List<Enrollment>> getAllEnrollments() {
         return null;
@@ -27,6 +31,7 @@ public class EnrollmentController {
     @PostMapping
     public ResponseEntity<Integer> createEnrollment(@RequestBody Enrollment enrollment) {
         return new ResponseEntity<>(enrollmentService.createEnrollment(enrollment),HttpStatus.CREATED);
+
     }
 
     public ResponseEntity<Void> updateEnrollment(int enrollmentId, Enrollment enrollment) {

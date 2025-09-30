@@ -28,8 +28,8 @@ public Course getCourseById(int courseId){
  return courseRepository.findByCourseId(courseId);
     }
  throw new CourseNotFoundException("Not found");
- 
 }
+ 
 public Integer addCourse(Course course)
 {
     Course c=courseRepository.save(course);
@@ -52,6 +52,8 @@ public void updateCourse(Course course) throws Exception{
     // else{
     //     throw new CourseNotFoundException("Course Not found");
     // }
+
+  
    }
 
    public List<Course> getAllCourseByTeacherId(int teacherId)
