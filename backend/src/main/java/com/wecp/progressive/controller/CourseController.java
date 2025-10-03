@@ -43,7 +43,7 @@ public class CourseController {
     @PostMapping
     public ResponseEntity<Integer> addCourse(@RequestBody Course course) throws Exception{
         courseService.addCourse(course);
-        return new ResponseEntity<>(course.getCourseId(),HttpStatus.OK);
+        return new ResponseEntity<>(course.getCourseId(),HttpStatus.CREATED);
     }
     @PutMapping("/{courseId}")
     public ResponseEntity<Void> updateCourse(@PathVariable int courseId,@RequestBody Course course) throws Exception {
