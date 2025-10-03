@@ -1,49 +1,64 @@
-package com.wecp.progressive.security;
-import com.wecp.progressive.util.JwtUtil;
-import jakarta.servlet.FilterChain;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+package com.wecp.progressive.util;
+import com.wecp.progressive.model.User;
+import com.wecp.progressive.repository.UserRepository;
+import io.jsonwebtoken.*;
+import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Component;
-import org.springframework.web.filter.OncePerRequestFilter;
-import org.springframework.security.web.authentication.WebAuthenticationSource;
-import java.io.IOException;
+import java.security.Key;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 @Component
-public class JwtRequestFilter extends OncePerRequestFilter {
-    private final UserDetailsService userDetailsService;
-    private final JwtUtil jwtUtil;
+public class JwtUtil {
+    private final UserRepository userRepository;
+    private final String secret = "secretKey000000secretKey000000secretKey000000"; // Must be at least 256 bits
+    private final int expiration = 86400 * 1000; // 24 hours in milliseconds
+    private final Key key = Keys.hmacShaKeyFor(secret.getBytes());
     @Autowired
-    public JwtRequestFilter(UserDetailsService userDetailsService, JwtUtil jwtUtil) {
-        this.userDetailsService = userDetailsService;
-       ServletResponse response,
-                                    FilterChain filterChain) throws ServletException, IOException {
-        final String authorizationHeader = request.getHeader("Authorization");
-        String username = null;
-        String jwtToken = null;
-        // Extract JWT token from Authorization header
-        if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
-            jwtToken = authorizationHeader.substring(7);
-            try {
-                username = jwtUtil.extractUsername(jwtToken);
-            } catch (Exception e) {
-                logger.warn("JWT extraction failed: " + e.getMessage());
-            }
+    public JwtUtil(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+    // Generate JWT token with claims
+    public String generateToken(String username) {
+        Map<String, Object> claims = new HashMap<>();
+        User user = userRepository.findByUsername(username);
+        if (user == null) {
+            throw new RuntimeException("User not found: " + username);
         }
-        // Validate token and set authentication
-        if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-            UserDetails userDetails = userDetailsService.loadUserByUsername(username);
-            if (jwtUtil.validateToken(jwtToken, userDetails)) {
-                UsernamePasswordAuthenticationToken authToken =
-                        new UsernamePasswordAuthenticationToken(
-                                userDetails, null, userDetails.getAuthorities());
-                authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-                SecurityContextHolder.getContext().setAuthentication(authToken);
-            }
-        }
+        claims.put("roles", user.getRoles());
+        claims.put("userId", user.getId());
+        claims.put("studentId", user.getStudentId());
+        claims.put("teacherId", user.getTeacherId());
+        return Jwts.builder()
+                .setClaims(claims)
+                .setSubject(username)
+                .setIssuedAt(new Date(System.currentTimeMillis()))
+                .setExpiration(new Date(System.currentTimeMillis() + expiration))
+                .signWith(key, SignatureAlgorithm.HS256)
+                .compact();
+    }
+    // Extract all claims from token
+    public Claims extractAllClaims(String token) {
+        return Jwts.parserBuilder()
+                .setSigningKey(key)
+                .build()
+                .parseClaimsJws(token)
+                .getBody();
+    }
+    // Extract username from token
+    public String extractUsername(String token) {
+        return extractAllClaims(token).getSubject();
+    }
+    // Check if token is expired
+    public boolean isTokenExpired(String token) {
+        return extractAllClaims(token).getExpiration().before(new Date());
+    }
+    // Validate token against user details
+    public boolean validateToken(String token, UserDetails userDetails) {
+        final String username = extractUsername(token);
+        return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
+    }
 }
  
