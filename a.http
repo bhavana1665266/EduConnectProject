@@ -1,0 +1,18 @@
+###
+POST https://ec2-3-109-32-221.projects.wecreateproblems.com/proxy/5000/user/register
+Content-Type: application/json
+
+{
+    "username":"qwerty123",
+    "password":"ycfgy2435e67t89ugivhjbh78909uyutrxfcguvibug8f67dtcuvyiu9g8ftcuguycvh",
+    "role":"STUDENT"
+}
+###
+
+POST https://ec2-3-109-32-221.projects.wecreateproblems.com/proxy/5000/user/login
+Content-Type: application/json
+
+{
+     "username":"qwerty123",
+    "password":"ycfgy2435e67t89ugivhjbh78909uyutrxfcguvibug8f67dtcuvyiu9g8ftcuguycvh"
+}
