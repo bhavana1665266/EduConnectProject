@@ -3,6 +3,8 @@ package com.wecp.progressive.service;
 import com.wecp.progressive.entity.Enrollment;
 
 import java.util.List;
+import org.springframework.stereotype.Service;
+@Service
 
 public interface EnrollmentService {
     List<Enrollment> getAllEnrollments();
