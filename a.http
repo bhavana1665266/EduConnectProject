@@ -1,0 +1,27 @@
+###
+POST http://localhost:5000/user/register
+Content-Type: application/json
+
+{
+    "username":"qwerty12",
+    "password":"1234567",
+    "role":"STUDENT",
+    "fullName":"qwerty abc",
+    "contactNumber":"9876543210",
+    "email":"qwerty@gmail.com",
+    "address":"hg uhytcfhgjbk",
+    "dateOfBirth":"2006-12-12"
+}
+###
+
+POST http://localhost:5000/user/login
+Content-Type: application/json
+
+{
+     "username":"qwerty12",
+    "password":"1234567"
+}
+###
+
+GET http://localhost:5000/course
+ 

@@ -1,41 +1,104 @@
 package com.wecp.progressive.controller;
 
 import com.wecp.progressive.entity.Student;
+import com.wecp.progressive.service.StudentService;
+import com.wecp.progressive.service.impl.StudentServiceImplArraylist;
+import com.wecp.progressive.service.impl.StudentServiceImplJpa;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+
+
+
+@RestController
+@RequestMapping("/student")
 public class StudentController {
-
-    public ResponseEntity<List<Student>> getAllStudents() {
-        return null;
+//abc
+//123
+//tdcgfkudtxfhcgj
+private StudentServiceImplArraylist studentServiceImplArraylist;
+@Autowired
+private StudentServiceImplJpa studentServiceImplJpa;
+@GetMapping
+    public ResponseEntity<List<Student>> getAllStudents()  {
+        
+        return new ResponseEntity<>(studentServiceImplJpa.getAllStudents(),HttpStatus.OK);
     }
 
-    public ResponseEntity<Student> getStudentById(int studentId) {
-        return null;
+@GetMapping("/{studentId}")
+    public ResponseEntity<Student> getStudentById(@PathVariable int studentId) throws Exception{
+        return new ResponseEntity<>(studentServiceImplJpa.getStudentById(studentId),HttpStatus.OK);
     }
 
-    public ResponseEntity<Integer> addStudent(Student student) {
-        return null;
-    }
 
-    public ResponseEntity<Void> updateStudent(int studentId, Student student) {
-        return null;
+@PostMapping
+    public ResponseEntity<Integer> addStudent( @RequestBody Student student) {
+      Integer result= studentServiceImplJpa.addStudent(student);
+        
+        return new ResponseEntity<>(result ,HttpStatus.CREATED);
+        
     }
-
-    public ResponseEntity<Void> deleteStudent(int studentId) {
-        return null;
-    }
-
+    @GetMapping("/fromArrayList")
     public ResponseEntity<List<Student>> getAllStudentFromArrayList() {
-        return null;
+
+         return new ResponseEntity<>(studentServiceImplArraylist.getAllStudents(),HttpStatus.CREATED);
+    }
+    // public Integer addStudentToArrayList(Student student){
+    //     studentServiceImplArraylist.addStudent(student);
+    //     return 
+    // }
+
+
+@GetMapping("/fromArrayList/sorted")
+    public ResponseEntity<List<Student>> getAllStudentSortedByNameFromArrayList() throws Exception {
+        return new ResponseEntity<>(studentServiceImplArraylist.getAllStudentSortedByName(),HttpStatus.CREATED);
+  }
+    
+    @PutMapping("/{studentId}")
+    public ResponseEntity<Void> updateStudent(@PathVariable int studentId, @RequestBody Student student) throws Exception{
+        studentServiceImplJpa.updateStudent(student);
+        return new ResponseEntity<>(HttpStatus.OK);
+      
+    }
+    @DeleteMapping("/{studentId}")
+    public ResponseEntity<Void> deleteStudent(@PathVariable int studentId) throws Exception{
+        studentServiceImplJpa.deleteStudent(studentId);
+       return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    public ResponseEntity<Integer> addStudentToArrayList(Student student) {
-        return null;
-    }
+  
+    // public String getMethodName(@RequestParam String param) {
+    //     return new String();
+    // }
+   
 
-    public ResponseEntity<List<Student>> getAllStudentSortedByNameFromArrayList() {
-        return null;
+    // @GetMapping("/toArrayList")
+    // public String getMethodName(@RequestParam String param) {
+    //     return new String();
+    // }
+    @PostMapping("/toArrayList")
+    public ResponseEntity<Integer> addStudentToArrayList(@RequestBody Student student) {
+       return new ResponseEntity<>(studentServiceImplArraylist.addStudent(student),HttpStatus.CREATED);
     }
+// @GetMapping()
+// public String getMethodName(@RequestParam String param) {
+//     return new String();
+// }
+
+   
 }
