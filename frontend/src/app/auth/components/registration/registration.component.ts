@@ -12,6 +12,9 @@ export class RegistrationComponent  {
     errorMessage:string | null =null;
 
     constructor(private fb: FormBuilder){
+        
+    }
+    ngOnInit():void{
         this.registrationForm=this.fb.group({
             username:['',Validators.required],
             email:['',[Validators.required,Validators.email]],
