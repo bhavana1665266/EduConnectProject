@@ -20,7 +20,7 @@ export class RegistrationComponent {
         this.registrationForm = this.formBuilder.group({
             username: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9]+$/)]],
             email: ['', [Validators.required, Validators.email]],
-            password: ['', [Validators.required, Validators.minLength(8), Validators.pattern(/^(?=.*[A-Z])(?=.*\d).+$/)]],
+            password: ['', [Validators.required, Validators.minLength(8), Validators.pattern(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@$%&*?]).+$/)]],
             role: ['', [Validators.required]],
             fullName: ['', Validators.required],
             contactNumber: ['', Validators.required],
