@@ -1,0 +1,63 @@
+##
+ POST http://localhost:5000/user/register
+Content-Type: application/json
+ 
+{
+    "username":"Asdf",
+    "password":"A@123",
+    "role":"student",
+    "fullName":"Abc def",
+    "contactNumber":"9456786712",
+    "email":"Abc@gmail.com",
+    "address":"jyrthsxfcgi",
+    "dateOfBirth":"2002-12-12",
+    "subject":"maths",
+    "yearsOfExperience":3
+ 
+}
+###
+POST http://localhost:5000/user/login
+Content-Type: application/json
+ 
+{
+    "username":"Asdf",
+       "password":"A@123"
+}
+ 
+ 
+ 
+ 
+###
+# GET http://localhost:5000/user/1
+ 
+ 
+ 
+# Content-Type: application/json
+ 
+PUT http://localhost:5000/student/3
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiU1RVREVOVCIsInVzZXJJZCI6MywiaWF0IjoxNzYwOTUwMzg1LCJleHAiOjE3NjE0NTEwMzl9.KYn5QX8FyALQ_E0r_bCCQppMt-AqYa7pGp-frQyocbgimCxNg1ZQ12xh5KCAszkDj95qExmXih-f7_EeafbWxA
+Content-Type: application/json
+ 
+{
+    "username":"Asdf",
+    "password":"A@123",
+    "role":"student",
+    "fullName":"Abc def",
+    "contactNumber":"9456786712",
+    "email":"Abc@gmail.com",
+    "address":"jyrthsxfcgi"
+   
+ 
+}
+ 
+# Content-Type: application/json
+ 
+# {
+#     "fullName":"Narayana",
+#     "dateOfBirth":"2003-08-13",
+#     "contactNumber":"94567867",
+#      "email":"n@gmail.com",
+#      "address":"nadhayalla"
+# }
+ 
+ 
