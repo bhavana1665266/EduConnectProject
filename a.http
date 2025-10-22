@@ -1,63 +1,207 @@
-##
- POST http://localhost:5000/user/register
+
+
+
+GET http://localhost:5000/teacher/
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6NSwiaWF0IjoxNzYxMTU1Mjc1LCJleHAiOjE3NjE2NTU5Mjl9.-mMuid3shUR_XHcHeNTk6D7SjWK02aO9msP6uKDOSireOvAKSMD0_tfm9qfGA7ewF0jH7kZhsxTxITg2RlsEGQ
 Content-Type: application/json
- 
-{
-    "username":"Asdf",
-    "password":"A@123",
-    "role":"student",
-    "fullName":"Abc def",
-    "contactNumber":"9456786712",
-    "email":"Abc@gmail.com",
-    "address":"jyrthsxfcgi",
-    "dateOfBirth":"2002-12-12",
-    "subject":"maths",
-    "yearsOfExperience":3
- 
-}
+
 ###
+
 POST http://localhost:5000/user/login
 Content-Type: application/json
- 
+
 {
-    "username":"Asdf",
-       "password":"A@123"
+    "username": "Athaulla",
+    "password": "583Karurqx"
 }
- 
- 
- 
- 
+
+//Teacher 1 register
 ###
-# GET http://localhost:5000/user/1
- 
- 
- 
-# Content-Type: application/json
- 
-PUT http://localhost:5000/student/3
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiU1RVREVOVCIsInVzZXJJZCI6MywiaWF0IjoxNzYwOTUwMzg1LCJleHAiOjE3NjE0NTEwMzl9.KYn5QX8FyALQ_E0r_bCCQppMt-AqYa7pGp-frQyocbgimCxNg1ZQ12xh5KCAszkDj95qExmXih-f7_EeafbWxA
+POST http://localhost:5000/user/register
 Content-Type: application/json
- 
+
 {
-    "username":"Asdf",
-    "password":"A@123",
-    "role":"student",
-    "fullName":"Abc def",
-    "contactNumber":"9456786712",
-    "email":"Abc@gmail.com",
-    "address":"jyrthsxfcgi"
-   
- 
+    "username": "Teaacher1",
+    "password": "Teacher@123",
+    "role": "Teacher",
+    "fullName": "Athaulla GM",
+    "contactNumber": "9765467890",
+    "email": "jxfcgvu@gmail.com",
+    "address": "Chennai",
+    "dateOfBirth": "1985-06-15",
+    "subject": "Java",
+    "yearsOfExperience": 16
 }
- 
-# Content-Type: application/json
- 
-# {
-#     "fullName":"Narayana",
-#     "dateOfBirth":"2003-08-13",
-#     "contactNumber":"94567867",
-#      "email":"n@gmail.com",
-#      "address":"nadhayalla"
-# }
- 
- 
+###
+
+POST http://localhost:5000/user/register
+Content-Type: application/json
+
+{
+    "username": "Teaacher2",
+    "password": "Teacher@333",
+    "role": "Teacher",
+    "fullName": "Athaulla GM",
+    "contactNumber": "9765467890",
+    "email": "a@gmail.com",
+    "address": "Chennai",
+    "dateOfBirth": "1985-06-15",
+    "subject": "Java",
+    "yearsOfExperience": 2
+
+}
+
+
+####
+POST http://localhost:5000/user/login
+Content-Type: application/json
+
+{
+    "username": "Teaacher1",
+    "password": "Teacher@123"
+}
+
+###
+
+
+GET http://localhost:5000/teacher/1
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6NSwiaWF0IjoxNzYxMTUwODk0LCJleHAiOjE3NjE2NTE1NDh9.IGyf3nmTFPPn3NJJpwfQRHXq1j0OTI7_4WnZCnoOfBxF5Q22_HuI1pMIveWbXbaBnVgZlDJb00PoCO4hC459SQ
+Content-Type: application/json
+####
+GET http://localhost:5000/teacher/yearsOfExperience
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6NSwiaWF0IjoxNzYxMTUwODk0LCJleHAiOjE3NjE2NTE1NDh9.IGyf3nmTFPPn3NJJpwfQRHXq1j0OTI7_4WnZCnoOfBxF5Q22_HuI1pMIveWbXbaBnVgZlDJb00PoCO4hC459SQ
+
+####
+GET http://localhost:5000/teacher
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6MSwiaWF0IjoxNzYxMTQ5Mzc2LCJleHAiOjE3NjE2NTAwMzF9.wQxcnO0Om6YTe8naBCdNFNl7BCRjdMyjuAoTYaeubFfeV_Hk3Y9qFFbSYsS5dy6dB2VQ1AU5tbpH2KX6V2bp8w
+Content-Type: application/json
+####
+GET http://localhost:5000/teacher/2
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6MSwiaWF0IjoxNzYxMTQ5Mzc2LCJleHAiOjE3NjE2NTAwMzF9.wQxcnO0Om6YTe8naBCdNFNl7BCRjdMyjuAoTYaeubFfeV_Hk3Y9qFFbSYsS5dy6dB2VQ1AU5tbpH2KX6V2bp8w
+Content-Type: application/json
+####
+DELETE  http://localhost:5000/teacher/1
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6MSwiaWF0IjoxNzYxMTQ5Mzc2LCJleHAiOjE3NjE2NTAwMzF9.wQxcnO0Om6YTe8naBCdNFNl7BCRjdMyjuAoTYaeubFfeV_Hk3Y9qFFbSYsS5dy6dB2VQ1AU5tbpH2KX6V2bp8w
+
+
+
+###
+//Student register1
+POST http://localhost:5000/user/register
+Content-Type: application/json
+
+
+{
+    "username": "Bhavana12",
+    "password": "Bhavana@123",
+    "role": "Student",
+    "fullName": "Bhavana S ",
+    "contactNumber": "9765467890",
+    "email": "bhavana12@gmail.com",
+    "address": "Hyderabad",
+    "dateOfBirth": "1985-06-15",
+    "subject": "Java",
+    "yearsOfExperience": 16
+}
+
+
+###
+//student registr 2
+POST http://localhost:5000/user/register
+Content-Type: application/json
+
+{
+    "username": "Vijaya12",
+    "password": "Vijaya@123",
+    "role": "Student",
+    "fullName": "Vijaya S",
+    "contactNumber": "9765467890",
+    "email": "vijaya2@gmail.com",
+    "address": "Chennai",
+    "dateOfBirth": "1985-06-15",
+    "subject": "Java",
+    "yearsOfExperience": 16
+}
+###
+
+
+###
+GET http://localhost:5000/enrollment
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6NSwiaWF0IjoxNzYxMTUwODk0LCJleHAiOjE3NjE2NTE1NDh9.IGyf3nmTFPPn3NJJpwfQRHXq1j0OTI7_4WnZCnoOfBxF5Q22_HuI1pMIveWbXbaBnVgZlDJb00PoCO4hC459SQ
+
+###
+//Add course 1
+POST http://localhost:5000/course
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6NSwiaWF0IjoxNzYxMTUwODk0LCJleHAiOjE3NjE2NTE1NDh9.IGyf3nmTFPPn3NJJpwfQRHXq1j0OTI7_4WnZCnoOfBxF5Q22_HuI1pMIveWbXbaBnVgZlDJb00PoCO4hC459SQ
+Content-Type: application/json
+
+
+{
+    "courseName": "SQl",
+    "description": "Java 30 days",
+    "teacher" : {
+        "teacherId":2
+    }
+}
+
+###
+//Add course 2
+POST http://localhost:5000/course
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6NSwiaWF0IjoxNzYxMTUwODk0LCJleHAiOjE3NjE2NTE1NDh9.IGyf3nmTFPPn3NJJpwfQRHXq1j0OTI7_4WnZCnoOfBxF5Q22_HuI1pMIveWbXbaBnVgZlDJb00PoCO4hC459SQ
+Content-Type: application/json
+
+
+{
+    "courseName": "Python",
+    "description": "Python 20 days",
+    "teacher" : {
+        "teacherId":2
+    }
+}
+
+###
+//Add course 2
+POST http://localhost:5000/course
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6NSwiaWF0IjoxNzYxMTUwODk0LCJleHAiOjE3NjE2NTE1NDh9.IGyf3nmTFPPn3NJJpwfQRHXq1j0OTI7_4WnZCnoOfBxF5Q22_HuI1pMIveWbXbaBnVgZlDJb00PoCO4hC459SQ
+Content-Type: application/json
+
+
+{
+    "courseName": "OOP",
+    "description": "OOP 20 days",
+    "teacher" : {
+        "teacherId":2
+    }
+}
+
+###
+//get courses
+GET  http://localhost:5000/course/teacher/2
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6NSwiaWF0IjoxNzYxMTUwODk0LCJleHAiOjE3NjE2NTE1NDh9.IGyf3nmTFPPn3NJJpwfQRHXq1j0OTI7_4WnZCnoOfBxF5Q22_HuI1pMIveWbXbaBnVgZlDJb00PoCO4hC459SQ
+
+###
+//Add enrollment1
+POST http://localhost:5000/enrollment
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6NSwiaWF0IjoxNzYxMTU1Mjc1LCJleHAiOjE3NjE2NTU5Mjl9.-mMuid3shUR_XHcHeNTk6D7SjWK02aO9msP6uKDOSireOvAKSMD0_tfm9qfGA7ewF0jH7kZhsxTxITg2RlsEGQ
+Content-Type: application/json
+
+{
+    "student":{
+        "studentId":1
+    },
+    "course":{
+        "courseId":1
+    },
+    "enrollmentDate":"2025-02-01"
+}
+
+###
+//Get all enrollments
+GET http://localhost:5000/enrollment
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6NSwiaWF0IjoxNzYxMTUwODk0LCJleHAiOjE3NjE2NTE1NDh9.IGyf3nmTFPPn3NJJpwfQRHXq1j0OTI7_4WnZCnoOfBxF5Q22_HuI1pMIveWbXbaBnVgZlDJb00PoCO4hC459SQ
+Content-Type: application/json
+
+
+
+
+
