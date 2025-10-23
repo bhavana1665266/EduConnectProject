@@ -20,6 +20,7 @@ export class EnrollmentComponent implements OnInit {
   students: Student[] = [];
   role: string | null;
   studentId: number;
+  teacherId : number;
   student: Student;
 
   constructor(private formBuilder: FormBuilder, private educonnectService: EduConnectService) { }
@@ -27,13 +28,15 @@ export class EnrollmentComponent implements OnInit {
   ngOnInit(): void {
     this.role = localStorage.getItem("role");
     this.studentId = Number(localStorage.getItem("student_id"));
-
+    this.teacherId = Number(localStorage.getItem("teacher_id"));
     this.initializeForm();
 
     if (this.role === 'TEACHER') {
       this.loadTeacherData();
+      this.loadCoursesForTeacher();
     } else if (this.role === 'STUDENT') {
       this.loadStudentData();
+      this.loadCourses();
     }
 
     this.loadCourses();
@@ -77,6 +80,15 @@ export class EnrollmentComponent implements OnInit {
     });
   }
 
+  loadCoursesForTeacher(): void {
+    this.educonnectService.getCoursesByTeacherId(this.teacherId).subscribe({
+      next: (response) => {
+        this.courses = response;
+      },
+      error: (error) => console.log('Error loading courses.', error)
+    });
+  }
+
   onSubmit(): void {
     if (this.enrollmentForm.valid) {
       const enrollmentData: Enrollment = {
@@ -112,3 +124,5 @@ export class EnrollmentComponent implements OnInit {
     this.successMessage = null;
   }
 }
+
+

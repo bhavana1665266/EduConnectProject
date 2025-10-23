@@ -2,7 +2,7 @@
 
 
 GET http://localhost:5000/teacher/
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6NSwiaWF0IjoxNzYxMTU1Mjc1LCJleHAiOjE3NjE2NTU5Mjl9.-mMuid3shUR_XHcHeNTk6D7SjWK02aO9msP6uKDOSireOvAKSMD0_tfm9qfGA7ewF0jH7kZhsxTxITg2RlsEGQ
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6OCwiaWF0IjoxNzYxMTk5MDExLCJleHAiOjE3NjE2OTk2NjV9.koYYFXOCDog7XJUhO_lcQ2-KaEOXX451_IhEmsYOUYGygefLcKSJFUVZTh365QX4aSRgHRwZnvM6wSCDbf3MLg
 Content-Type: application/json
 
 ###
@@ -11,8 +11,8 @@ POST http://localhost:5000/user/login
 Content-Type: application/json
 
 {
-    "username": "Athaulla",
-    "password": "583Karurqx"
+    "username": "Teaacher1",
+    "password": "Teacher@123"
 }
 
 //Teacher 1 register
@@ -65,15 +65,11 @@ Content-Type: application/json
 
 
 GET http://localhost:5000/teacher/1
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6NSwiaWF0IjoxNzYxMTUwODk0LCJleHAiOjE3NjE2NTE1NDh9.IGyf3nmTFPPn3NJJpwfQRHXq1j0OTI7_4WnZCnoOfBxF5Q22_HuI1pMIveWbXbaBnVgZlDJb00PoCO4hC459SQ
-Content-Type: application/json
-####
-GET http://localhost:5000/teacher/yearsOfExperience
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6NSwiaWF0IjoxNzYxMTUwODk0LCJleHAiOjE3NjE2NTE1NDh9.IGyf3nmTFPPn3NJJpwfQRHXq1j0OTI7_4WnZCnoOfBxF5Q22_HuI1pMIveWbXbaBnVgZlDJb00PoCO4hC459SQ
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6MSwiaWF0IjoxNzYxMTk4NzI0LCJleHAiOjE3NjE2OTkzNzh9.ylXO1nvcZ7YodoizWELu2uneztYIUDLfji4NbwQbWxef_kPuVMW24zL2-SRDGWXV8wYCWp7pfgf_y7lN5Z6Y9A
 
 ####
 GET http://localhost:5000/teacher
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6MSwiaWF0IjoxNzYxMTQ5Mzc2LCJleHAiOjE3NjE2NTAwMzF9.wQxcnO0Om6YTe8naBCdNFNl7BCRjdMyjuAoTYaeubFfeV_Hk3Y9qFFbSYsS5dy6dB2VQ1AU5tbpH2KX6V2bp8w
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6MSwiaWF0IjoxNzYxMTk4NzI0LCJleHAiOjE3NjE2OTkzNzh9.ylXO1nvcZ7YodoizWELu2uneztYIUDLfji4NbwQbWxef_kPuVMW24zL2-SRDGWXV8wYCWp7pfgf_y7lN5Z6Y9A
 Content-Type: application/json
 ####
 GET http://localhost:5000/teacher/2
@@ -81,7 +77,7 @@ Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6M
 Content-Type: application/json
 ####
 DELETE  http://localhost:5000/teacher/1
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6MSwiaWF0IjoxNzYxMTQ5Mzc2LCJleHAiOjE3NjE2NTAwMzF9.wQxcnO0Om6YTe8naBCdNFNl7BCRjdMyjuAoTYaeubFfeV_Hk3Y9qFFbSYsS5dy6dB2VQ1AU5tbpH2KX6V2bp8w
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6MSwiaWF0IjoxNzYxMTk4NzI0LCJleHAiOjE3NjE2OTkzNzh9.ylXO1nvcZ7YodoizWELu2uneztYIUDLfji4NbwQbWxef_kPuVMW24zL2-SRDGWXV8wYCWp7pfgf_y7lN5Z6Y9A
 
 
 
@@ -124,15 +120,23 @@ Content-Type: application/json
 }
 ###
 
+POST http://localhost:5000/user/login
+Content-Type: application/json
+
+{
+    "username": "Vijaya12",
+    "password": "Vijaya@123"
+}
+
 
 ###
 GET http://localhost:5000/enrollment
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6NSwiaWF0IjoxNzYxMTUwODk0LCJleHAiOjE3NjE2NTE1NDh9.IGyf3nmTFPPn3NJJpwfQRHXq1j0OTI7_4WnZCnoOfBxF5Q22_HuI1pMIveWbXbaBnVgZlDJb00PoCO4hC459SQ
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6OCwiaWF0IjoxNzYxMTk5MDExLCJleHAiOjE3NjE2OTk2NjV9.koYYFXOCDog7XJUhO_lcQ2-KaEOXX451_IhEmsYOUYGygefLcKSJFUVZTh365QX4aSRgHRwZnvM6wSCDbf3MLg
 
 ###
 //Add course 1
 POST http://localhost:5000/course
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6NSwiaWF0IjoxNzYxMTUwODk0LCJleHAiOjE3NjE2NTE1NDh9.IGyf3nmTFPPn3NJJpwfQRHXq1j0OTI7_4WnZCnoOfBxF5Q22_HuI1pMIveWbXbaBnVgZlDJb00PoCO4hC459SQ
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6OCwiaWF0IjoxNzYxMTk5MDExLCJleHAiOjE3NjE2OTk2NjV9.koYYFXOCDog7XJUhO_lcQ2-KaEOXX451_IhEmsYOUYGygefLcKSJFUVZTh365QX4aSRgHRwZnvM6wSCDbf3MLg
 Content-Type: application/json
 
 
@@ -147,7 +151,7 @@ Content-Type: application/json
 ###
 //Add course 2
 POST http://localhost:5000/course
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6NSwiaWF0IjoxNzYxMTUwODk0LCJleHAiOjE3NjE2NTE1NDh9.IGyf3nmTFPPn3NJJpwfQRHXq1j0OTI7_4WnZCnoOfBxF5Q22_HuI1pMIveWbXbaBnVgZlDJb00PoCO4hC459SQ
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6OCwiaWF0IjoxNzYxMTk5MDExLCJleHAiOjE3NjE2OTk2NjV9.koYYFXOCDog7XJUhO_lcQ2-KaEOXX451_IhEmsYOUYGygefLcKSJFUVZTh365QX4aSRgHRwZnvM6wSCDbf3MLg
 Content-Type: application/json
 
 
@@ -177,20 +181,20 @@ Content-Type: application/json
 ###
 //get courses
 GET  http://localhost:5000/course/teacher/2
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6NSwiaWF0IjoxNzYxMTUwODk0LCJleHAiOjE3NjE2NTE1NDh9.IGyf3nmTFPPn3NJJpwfQRHXq1j0OTI7_4WnZCnoOfBxF5Q22_HuI1pMIveWbXbaBnVgZlDJb00PoCO4hC459SQ
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6OCwiaWF0IjoxNzYxMTk5MDExLCJleHAiOjE3NjE2OTk2NjV9.koYYFXOCDog7XJUhO_lcQ2-KaEOXX451_IhEmsYOUYGygefLcKSJFUVZTh365QX4aSRgHRwZnvM6wSCDbf3MLg
 
 ###
 //Add enrollment1
 POST http://localhost:5000/enrollment
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6NSwiaWF0IjoxNzYxMTU1Mjc1LCJleHAiOjE3NjE2NTU5Mjl9.-mMuid3shUR_XHcHeNTk6D7SjWK02aO9msP6uKDOSireOvAKSMD0_tfm9qfGA7ewF0jH7kZhsxTxITg2RlsEGQ
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6OCwiaWF0IjoxNzYxMTk5MDExLCJleHAiOjE3NjE2OTk2NjV9.koYYFXOCDog7XJUhO_lcQ2-KaEOXX451_IhEmsYOUYGygefLcKSJFUVZTh365QX4aSRgHRwZnvM6wSCDbf3MLg
 Content-Type: application/json
 
 {
     "student":{
-        "studentId":1
+        "studentId":4
     },
     "course":{
-        "courseId":1
+        "courseId":3
     },
     "enrollmentDate":"2025-02-01"
 }
@@ -198,8 +202,8 @@ Content-Type: application/json
 ###
 //Get all enrollments
 GET http://localhost:5000/enrollment
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6NSwiaWF0IjoxNzYxMTUwODk0LCJleHAiOjE3NjE2NTE1NDh9.IGyf3nmTFPPn3NJJpwfQRHXq1j0OTI7_4WnZCnoOfBxF5Q22_HuI1pMIveWbXbaBnVgZlDJb00PoCO4hC459SQ
-Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiVEVBQ0hFUiIsInVzZXJJZCI6OCwiaWF0IjoxNzYxMTk5MDExLCJleHAiOjE3NjE2OTk2NjV9.koYYFXOCDog7XJUhO_lcQ2-KaEOXX451_IhEmsYOUYGygefLcKSJFUVZTh365QX4aSRgHRwZnvM6wSCDbf3MLg
+
 
 
 
